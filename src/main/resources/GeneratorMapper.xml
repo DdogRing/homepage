@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
     <!-- 指定连接数据库的 JDBC 驱动包所在位置，指定到你本机的完整路径 -->
-    <classPathEntry location="D:\java\jars\mysql-connector-java-5.1.18-bin.jar"/>
+    <classPathEntry location="D:\IDEA_Projects\homepage\homepage\src\main\resources\lib\mysql-connector-java-5.1.18-bin.jar"/>
     <!-- 配置 table 表信息内容体，targetRuntime 指定采用 MyBatis3 的版本 -->
     <context id="tables" targetRuntime="MyBatis3">
 
@@ -13,7 +13,7 @@
         <!--配置生成pojo的toString()方法的插件-->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
         <!-- 抑制生成注释，由于生成的注释都是英文的，可以不让它生成 -->
-        <commentGenerator type="com.qb.qbyg.utils.MyCommentGenerator">
+        <commentGenerator type="com.ddogring.homepage.util.MyCommentGenerator">
            <!-- <property name="suppressAllComments" value="true"/>-->
         </commentGenerator>
         <!-- 配置数据库连接信息 -->
@@ -32,7 +32,7 @@
         <!-- 生成 MyBatis 的 Mapper.xml 文件，targetPackage 指定 mapper.xml 文件的
         包名， targetProject 指定生成的 mapper.xml 放在 eclipse 的哪个工程下面 -->
         <sqlMapGenerator targetPackage="mapper"
-                         targetProject="D:\java\Idea_Projects\homepage\homepage\src\main\resources">
+                         targetProject="D:\Idea_Projects\homepage\homepage\src\main\resources">
             <!--<property name="enableSubPackages" value="true"/>-->
         </sqlMapGenerator>
         <!-- 生成 MyBatis 的 Mapper 接口类文件,targetPackage 指定 Mapper 接口类的包

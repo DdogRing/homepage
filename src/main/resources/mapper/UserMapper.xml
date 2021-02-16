@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ddogring.homepage.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.ddogring.homepage.model.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="CHAR" property="password" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="mobile" jdbcType="CHAR" property="mobile" />
+    <result column="qq_number" jdbcType="INTEGER" property="qqNumber" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="upd_time" jdbcType="DATE" property="updTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, password, mail, mobile, qq_number, create_time, upd_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ddogring.homepage.model.User">
+    insert into t_user (id, username, password, 
+      mail, mobile, qq_number, 
+      create_time, upd_time)
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=CHAR}, 
+      #{mail,jdbcType=VARCHAR}, #{mobile,jdbcType=CHAR}, #{qqNumber,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=DATE}, #{updTime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.ddogring.homepage.model.User">
+    insert into t_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="username != null">
+        username,
+      </if>
+      <if test="password != null">
+        password,
+      </if>
+      <if test="mail != null">
+        mail,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="qqNumber != null">
+        qq_number,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updTime != null">
+        upd_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=CHAR},
+      </if>
+      <if test="mail != null">
+        #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=CHAR},
+      </if>
+      <if test="qqNumber != null">
+        #{qqNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updTime != null">
+        #{updTime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.ddogring.homepage.model.User">
+    update t_user
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        password = #{password,jdbcType=CHAR},
+      </if>
+      <if test="mail != null">
+        mail = #{mail,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=CHAR},
+      </if>
+      <if test="qqNumber != null">
+        qq_number = #{qqNumber,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="updTime != null">
+        upd_time = #{updTime,jdbcType=DATE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.ddogring.homepage.model.User">
+    update t_user
+    set username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=CHAR},
+      mail = #{mail,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=CHAR},
+      qq_number = #{qqNumber,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=DATE},
+      upd_time = #{updTime,jdbcType=DATE}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
