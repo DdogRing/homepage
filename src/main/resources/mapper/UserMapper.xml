@@ -7,12 +7,13 @@
     <result column="password" jdbcType="CHAR" property="password" />
     <result column="mail" jdbcType="VARCHAR" property="mail" />
     <result column="mobile" jdbcType="CHAR" property="mobile" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="qq_number" jdbcType="INTEGER" property="qqNumber" />
-    <result column="create_time" jdbcType="DATE" property="createTime" />
-    <result column="upd_time" jdbcType="DATE" property="updTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="upd_time" jdbcType="TIMESTAMP" property="updTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, username, password, mail, mobile, qq_number, create_time, upd_time
+    id, username, password, mail, mobile, address, qq_number, create_time, upd_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -26,11 +27,13 @@
   </delete>
   <insert id="insert" parameterType="com.ddogring.homepage.model.User">
     insert into t_user (id, username, password, 
-      mail, mobile, qq_number, 
-      create_time, upd_time)
+      mail, mobile, address, 
+      qq_number, create_time, upd_time
+      )
     values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=CHAR}, 
-      #{mail,jdbcType=VARCHAR}, #{mobile,jdbcType=CHAR}, #{qqNumber,jdbcType=INTEGER}, 
-      #{createTime,jdbcType=DATE}, #{updTime,jdbcType=DATE})
+      #{mail,jdbcType=VARCHAR}, #{mobile,jdbcType=CHAR}, #{address,jdbcType=VARCHAR}, 
+      #{qqNumber,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.ddogring.homepage.model.User">
     insert into t_user
@@ -49,6 +52,9 @@
       </if>
       <if test="mobile != null">
         mobile,
+      </if>
+      <if test="address != null">
+        address,
       </if>
       <if test="qqNumber != null">
         qq_number,
@@ -76,14 +82,17 @@
       <if test="mobile != null">
         #{mobile,jdbcType=CHAR},
       </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
       <if test="qqNumber != null">
         #{qqNumber,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
-        #{createTime,jdbcType=DATE},
+        #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updTime != null">
-        #{updTime,jdbcType=DATE},
+        #{updTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -102,14 +111,17 @@
       <if test="mobile != null">
         mobile = #{mobile,jdbcType=CHAR},
       </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
       <if test="qqNumber != null">
         qq_number = #{qqNumber,jdbcType=INTEGER},
       </if>
       <if test="createTime != null">
-        create_time = #{createTime,jdbcType=DATE},
+        create_time = #{createTime,jdbcType=TIMESTAMP},
       </if>
       <if test="updTime != null">
-        upd_time = #{updTime,jdbcType=DATE},
+        upd_time = #{updTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -120,9 +132,17 @@
       password = #{password,jdbcType=CHAR},
       mail = #{mail,jdbcType=VARCHAR},
       mobile = #{mobile,jdbcType=CHAR},
+      address = #{address,jdbcType=VARCHAR},
       qq_number = #{qqNumber,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=DATE},
-      upd_time = #{updTime,jdbcType=DATE}
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      upd_time = #{updTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getUserByUsername" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" />
+    from t_user
+    where 1=1
+    and username = #{username}
+  </select>
 </mapper>
