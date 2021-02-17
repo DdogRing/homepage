@@ -2,6 +2,7 @@ package com.ddogring.homepage.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author DdogRing
@@ -11,14 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/index")
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
         return "index";
-    }
-
-    @RequestMapping("/article")
-    public String a(){
-        return "article";
     }
 
     @RequestMapping("/diary")

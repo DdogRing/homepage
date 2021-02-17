@@ -1,7 +1,9 @@
 package com.ddogring.homepage.mapper;
 
 import com.ddogring.homepage.model.Article;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ArticleMapper {
     int deleteByPrimaryKey(Integer id);
 

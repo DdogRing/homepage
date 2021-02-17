@@ -1,7 +1,9 @@
 package com.ddogring.homepage.mapper;
 
 import com.ddogring.homepage.model.Comment;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CommentMapper {
     int deleteByPrimaryKey(Integer id);
 

@@ -1,7 +1,9 @@
 package com.ddogring.homepage.mapper;
 
 import com.ddogring.homepage.model.SpecialColumn;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface SpecialColumnMapper {
     int deleteByPrimaryKey(Integer id);
 

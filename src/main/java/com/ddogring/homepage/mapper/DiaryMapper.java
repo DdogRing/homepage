@@ -1,7 +1,9 @@
 package com.ddogring.homepage.mapper;
 
 import com.ddogring.homepage.model.Diary;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface DiaryMapper {
     int deleteByPrimaryKey(Integer id);
 

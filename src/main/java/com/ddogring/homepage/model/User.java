@@ -6,55 +6,61 @@ import java.util.Date;
 public class User implements Serializable {
     /**
      * 用户id
-	 * 2021-02-16T22:43:46.590
+	 * 2021-02-17T10:47:14.941
      */
     private Integer id;
 
     /**
      * 用户名
-	 * 2021-02-16T22:43:46.593
+	 * 2021-02-17T10:47:14.943
      */
     private String username;
 
     /**
      * 密码
-	 * 2021-02-16T22:43:46.593
+	 * 2021-02-17T10:47:14.943
      */
     private String password;
 
     /**
      * 邮箱
-	 * 2021-02-16T22:43:46.593
+	 * 2021-02-17T10:47:14.943
      */
     private String mail;
 
     /**
      * 手机号
-	 * 2021-02-16T22:43:46.593
+	 * 2021-02-17T10:47:14.943
      */
     private String mobile;
 
     /**
+     * 用户地址
+	 * 2021-02-17T10:47:14.943
+     */
+    private String address;
+
+    /**
      * QQ
-	 * 2021-02-16T22:43:46.593
+	 * 2021-02-17T10:47:14.943
      */
     private Integer qqNumber;
 
     /**
      * 创建时间
-	 * 2021-02-16T22:43:46.593
+	 * 2021-02-17T10:47:14.943
      */
     private Date createTime;
 
     /**
      * 更新时间
-	 * 2021-02-16T22:43:46.593
+	 * 2021-02-17T10:47:14.943
      */
     private Date updTime;
 
     /**
     
-	 * 2021-02-16T22:43:46.593
+	 * 2021-02-17T10:47:14.943
      */
     private static final long serialVersionUID = 1L;
 
@@ -129,6 +135,20 @@ public class User implements Serializable {
     }
 
     /**
+     * 用户地址
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * 用户地址
+     */
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
+    }
+
+    /**
      * QQ
      */
     public Integer getQqNumber() {
@@ -181,6 +201,7 @@ public class User implements Serializable {
         sb.append(", password=").append(password);
         sb.append(", mail=").append(mail);
         sb.append(", mobile=").append(mobile);
+        sb.append(", address=").append(address);
         sb.append(", qqNumber=").append(qqNumber);
         sb.append(", createTime=").append(createTime);
         sb.append(", updTime=").append(updTime);
