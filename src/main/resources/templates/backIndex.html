@@ -3,30 +3,99 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
+    <link rel="stylesheet" th:href="@{/app/css/libs/bootstrap/3.3.7/css/bootstrap.min.css}" type="text/css">
     <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+    <link th:href="@{/js/bootstrap/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css}" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery/2.2.4/jquery.min.js"></script>
     <script src="js/verificationNumbers.js" tppabs="js/verificationNumbers.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap-datetimepicker-master/locale/bootstrap-datetimepicker.zh-CN.js"></script>
     <style>
     .J_codeimg{z-index:-1;position:absolute;}
     </style>
+
 </head>
 <body>
-<div class="login-box" id="demo">
+
+<div class="login-title" id="demo" style="z-index: 500">
    <div class="input-content" style="margin-top: 150px;">
      <div class="login_tit">
           <div>
             <i class="tit-bg left"></i> 
-              SH2003 · 员工管理系统
+              加入BLOG
             <i class="tit-bg right"></i> 
           </div>
-          <p>Happy&nbsp;&nbsp;&nbsp;&nbsp;Everyday</p>
-     </div>    
+         <div class="col-md-10" style="margin-left: 30px">
+             <div class="form-group">
+                 <input class="form-control" name="username" id="usernameLo" type="email" placeholder="用户名">
+                 <div class="help-block text-left"></div>
+             </div>
+             <div class="form-group">
+                 <input class="form-control" name="password" id="passwordLo" type="password" placeholder="密码">
+                 <div class="help-block text-left"></div>
+             </div>
+             <button class="btn register" type="button" style="background-color: #006e80a3" data-toggle="modal" data-target="#createUserModal">注册</button>
+             <button class="btn register" type="submit" style="background-color: #006e80a3">登录</button>
+            <p>Happy&nbsp;&nbsp;&nbsp;&nbsp;Everyday</p>
+         </div>
+     </div>
      
   </div>
   <div class="canvaszz"> </div>
   <canvas id="canvas"></canvas> 
 </div>
+
+<!-- 创建注册用户的模态窗口 -->
+<div class="modal fade" id="createUserModal" role="dialog" data-backdrop="false" style="position: absolute;bottom: 0; z-index: 10000!important;">
+    <div class="modal-dialog" role="document" style="width: 50%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel1">注册你的账号</h4>
+            </div>
+            <div class="modal-body" style="position: absolute;">
+
+                <form class="form-horizontal" role="form">
+
+                    <div class="form-group">
+                        <label for="usernameRe" class="col-sm-2 control-label" style="left: 200px; width: 77px">用户名</label>
+                        <div class="col-sm-10" style="width: 300px; left: 185px;">
+                            <input class="form-control" name="username" id="usernameRe" type="text" placeholder="用户名">
+                        </div>
+                        <div class="help-block text-left"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailRe" class="col-sm-2 control-label" style="left: 200px;">邮箱</label>
+                        <div class="col-sm-10" style="width: 300px; left: 200px;">
+                            <input class="form-control" name="email" id="emailRe" type="text" placeholder="邮箱">
+                        </div>
+                        <div class="help-block text-left"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordRe" class="col-sm-2 control-label" style="left: 200px;">密码</label>
+                        <div class="col-sm-10" style="width: 300px; left: 200px;">
+                            <input class="form-control" name="password" id="passwordRe" type="password" placeholder="密码">
+                        </div>
+                        <div class="help-block text-left"></div>
+                    </div>
+
+                </form>
+
+            </div>
+            <div class="modal-footer" style="height: 400px;">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="position: absolute;left: 400px;top: 350px;">关闭</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" style="position: absolute;left: 340px;top: 350px;">注册</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
+
 //宇宙特效
 "use strict";
 var canvas = document.getElementById('canvas'),
@@ -82,12 +151,12 @@ function maxOrbit(x, y) {
 var Star = function() {
 
   this.orbitRadius = random(maxOrbit(w, h));
-  this.radius = random(60, this.orbitRadius) / 18; 
+  this.radius = random(60, this.orbitRadius) / 18;
   //星星大小
   this.orbitX = w / 2;
   this.orbitY = h / 2;
   this.timePassed = random(0, maxStars);
-  this.speed = random(this.orbitRadius) / 500000; 
+  this.speed = random(this.orbitRadius) / 500000;
   //星星移动速度
   this.alpha = random(2, 10) / 10;
 
