@@ -14,7 +14,12 @@ public class IndexController {
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(){
-        return "index";
+        return "backIndex1";
+    }
+
+    @RequestMapping(value = "/index2", method = RequestMethod.GET)
+    public String index2(){
+        return "backIndex";
     }
 
     @RequestMapping("/diary")
