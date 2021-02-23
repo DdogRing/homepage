@@ -2,6 +2,7 @@
 <html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
     <link rel="stylesheet" th:href="@{/app/css/libs/bootstrap/3.3.7/css/bootstrap.min.css}" type="text/css">
     <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css">
@@ -17,6 +18,26 @@
 
 </head>
 <body>
+
+<style type="text/css">
+    .big{
+        width: 400px;
+        height: 500px;
+        margin: 50px auto;
+        position: relative;
+    }
+    .small{
+        width: 200px;
+        height: 250px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+</style>
+
 
 <div class="login-title" id="demo" style="z-index: 500">
    <div class="input-content" style="margin-top: 150px;">
@@ -56,43 +77,55 @@
                 </button>
                 <h4 class="modal-title" id="myModalLabel1">注册你的账号</h4>
             </div>
-            <div class="modal-body" style="position: relative; height: 500px;">
+            <div class="modal-body big">
 
-                <form class="form-horizontal" role="form">
+                <div clsas="small">
+                    <form class="form-horizontal" role="form">
 
-                    <div class="form-group" style="position: absolute; left: 13%; vertical-align:middle; width: 85%; top: 10%;">
-                        <label for="usernameRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">用户名</label>
-                        <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
-                            <input class="form-control" name="username" id="usernameRe" type="text" placeholder="用户名">
+                        <!--
+                            width: 200px;
+                            height: 250px;
+                            background-color: #f00;
+                            position: absolute;
+                            margin: auto;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                        -->
+                        <div class="form-group" style="position: absolute; left: -9%; vertical-align:middle; width: 85%; top: 10%;">
+                            <label for="usernameRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">用户名</label>
+                            <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
+                                <input class="form-control" name="username" id="usernameRe" type="text" placeholder="用户名">
+                            </div>
+                            <div class="help-block text-left"></div>
                         </div>
-                        <div class="help-block text-left"></div>
-                    </div>
 
-                    <div class="form-group" style="position: absolute; left: 13%; vertical-align:middle; top: 25%; width: 85%;">
-                        <label for="emailRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">邮箱</label>
-                        <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
-                            <input class="form-control" name="email" id="emailRe" type="text" placeholder="邮箱">
+                        <div class="form-group" style="position: absolute; left: -9%; vertical-align:middle; top: 25%; width: 85%;">
+                            <label for="emailRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">邮箱</label>
+                            <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
+                                <input class="form-control" name="email" id="emailRe" type="text" placeholder="邮箱">
+                            </div>
+                            <div class="help-block text-left"></div>
                         </div>
-                        <div class="help-block text-left"></div>
-                    </div>
 
-                    <div class="form-group" style="position: absolute; left: 13%; vertical-align:middle; top: 40%; width: 85%;">
-                        <label for="passwordRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">密码</label>
-                        <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
-                            <input class="form-control" name="password" id="passwordRe" type="password" placeholder="密码">
+                        <div class="form-group" style="position: absolute; left: -9%; vertical-align:middle; top: 40%; width: 85%;">
+                            <label for="passwordRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">密码</label>
+                            <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
+                                <input class="form-control" name="password" id="passwordRe" type="password" placeholder="密码">
+                            </div>
+                            <div class="help-block text-left"></div>
                         </div>
-                        <div class="help-block text-left"></div>
-                    </div>
 
-                    <div class="form-group" style="position: absolute; left: 13%; vertical-align:middle; top: 55%; width: 85%;">
-                        <label for="passwordReC" class="col-sm-2 control-label" style="left: 24%; width: 86px;">确认密码</label>
-                        <div class="col-sm-10" style="width: 260px; left: 23.6%;vertical-align:middle;">
-                            <input class="form-control" name="password" id="passwordReC" type="password" placeholder="密码">
+                        <div class="form-group" style="position: absolute; left: 11%; vertical-align:middle; top: 55%; width: 88%;">
+                            <label for="passwordReC" class="col-sm-2 control-label" style="left: -2%; top: 37%; width: 90px;">确认密码</label>
+                            <div class="col-sm-10" style="width: 260px; left: -2.5%;vertical-align:middle;">
+                                <input class="form-control" name="password" id="passwordReC" type="password" placeholder="密码">
+                            </div>
+                            <div class="help-block text-left"></div>
                         </div>
-                        <div class="help-block text-left"></div>
-                    </div>
-
-                </form>
+                    </form>
+                </div>
 
             </div>
             <div class="modal-footer" style="height: 60px;">
@@ -209,5 +242,23 @@ function animation() {
 animation();
 </script>
 
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
 </body>
 </html>
