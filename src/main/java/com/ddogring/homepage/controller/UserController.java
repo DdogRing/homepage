@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.Map;
@@ -39,9 +40,9 @@ public class UserController {
      * @return java.lang.String
      */
     @RequestMapping("/register")
-    public Map register(){
+    @ResponseBody
+    public String register(){
         // userService.addUser(user);
-        System.out.println(SaltUtil.generateSalt(10));
-        return null;
+        return SaltUtil.generateSalt(10);
     }
 }
