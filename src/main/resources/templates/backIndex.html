@@ -47,7 +47,7 @@
 </div>
 
 <!-- 创建注册用户的模态窗口 -->
-<div class="modal fade" id="createUserModal" role="dialog" data-backdrop="false" style="position: absolute;bottom: 0; z-index: 10000!important;">
+<div class="modal fade" id="createUserModal" role="dialog" data-backdrop="false" style="position: absolute; bottom: 0; z-index: 10000!important;">
     <div class="modal-dialog" role="document" style="width: 50%;">
         <div class="modal-content">
             <div class="modal-header">
@@ -56,30 +56,38 @@
                 </button>
                 <h4 class="modal-title" id="myModalLabel1">注册你的账号</h4>
             </div>
-            <div class="modal-body" style="position: absolute;">
+            <div class="modal-body" style="position: relative; height: 500px;">
 
                 <form class="form-horizontal" role="form">
 
-                    <div class="form-group">
-                        <label for="usernameRe" class="col-sm-2 control-label" style="left: 200px; width: 77px">用户名</label>
-                        <div class="col-sm-10" style="width: 300px; left: 185px;">
+                    <div class="form-group" style="position: absolute; left: 13%; vertical-align:middle; width: 85%; top: 10%;">
+                        <label for="usernameRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">用户名</label>
+                        <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
                             <input class="form-control" name="username" id="usernameRe" type="text" placeholder="用户名">
                         </div>
                         <div class="help-block text-left"></div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="emailRe" class="col-sm-2 control-label" style="left: 200px;">邮箱</label>
-                        <div class="col-sm-10" style="width: 300px; left: 200px;">
+                    <div class="form-group" style="position: absolute; left: 13%; vertical-align:middle; top: 25%; width: 85%;">
+                        <label for="emailRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">邮箱</label>
+                        <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
                             <input class="form-control" name="email" id="emailRe" type="text" placeholder="邮箱">
                         </div>
                         <div class="help-block text-left"></div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="passwordRe" class="col-sm-2 control-label" style="left: 200px;">密码</label>
-                        <div class="col-sm-10" style="width: 300px; left: 200px;">
+                    <div class="form-group" style="position: absolute; left: 13%; vertical-align:middle; top: 40%; width: 85%;">
+                        <label for="passwordRe" class="col-sm-2 control-label" style="left: 25%; width: 77px;">密码</label>
+                        <div class="col-sm-10" style="width: 260px; left: 24.5%;vertical-align:middle;">
                             <input class="form-control" name="password" id="passwordRe" type="password" placeholder="密码">
+                        </div>
+                        <div class="help-block text-left"></div>
+                    </div>
+
+                    <div class="form-group" style="position: absolute; left: 13%; vertical-align:middle; top: 55%; width: 85%;">
+                        <label for="passwordReC" class="col-sm-2 control-label" style="left: 24%; width: 86px;">确认密码</label>
+                        <div class="col-sm-10" style="width: 260px; left: 23.6%;vertical-align:middle;">
+                            <input class="form-control" name="password" id="passwordReC" type="password" placeholder="密码">
                         </div>
                         <div class="help-block text-left"></div>
                     </div>
@@ -87,9 +95,9 @@
                 </form>
 
             </div>
-            <div class="modal-footer" style="height: 400px;">
-                <button type="button" class="btn btn-default" data-dismiss="modal" style="position: absolute;left: 400px;top: 350px;">关闭</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" style="position: absolute;left: 340px;top: 350px;">注册</button>
+            <div class="modal-footer" style="height: 60px;">
+                <button type="button" class="btn btn-default" data-dismiss="modal" style="position: absolute;left: 42%; top: 86%;">关闭</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" style="position: absolute;left: 52%;top: 86%;">注册</button>
             </div>
         </div>
     </div>
