@@ -3,6 +3,7 @@ package com.ddogring.homepage.service.serviceImpl;
 import com.ddogring.homepage.mapper.UserMapper;
 import com.ddogring.homepage.model.User;
 import com.ddogring.homepage.service.UserService;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -25,7 +26,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int addUser(User user) {
-        return userMapper.insertSelective(user);
+        String username = user.getUsername();
+        String password = user.getPassword();
+
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
+        // userMapper.insertSelective(user)
+        return 1;
     }
 
     @Override
@@ -39,7 +45,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUser(String username) {
-        return userMapper.getUserByUsername(username);
+    public User selectByUsername(String username) {
+        return userMapper.selectByUsername(username);
     }
+
 }

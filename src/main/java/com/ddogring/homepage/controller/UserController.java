@@ -2,12 +2,14 @@ package com.ddogring.homepage.controller;
 
 import com.ddogring.homepage.model.User;
 import com.ddogring.homepage.service.UserService;
+import com.ddogring.homepage.util.SaltUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * @author DdogRing
@@ -23,9 +25,23 @@ public class UserController {
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public String getUser(Model model){
 
-        User user = userService.getUser("DdogRing");
+        User user = userService.selectByUsername("DdogRing");
         model.addAttribute("user", user);
         System.out.println(user);
         return "index";
+    }
+
+    /**
+     * 用户注册
+     * @author DdogRing
+     * @date 2021/2/23 0023 22:04
+     * @param user 用户
+     * @return java.lang.String
+     */
+    @RequestMapping("/register")
+    public Map register(){
+        // userService.addUser(user);
+        System.out.println(SaltUtil.generateSalt(10));
+        return null;
     }
 }

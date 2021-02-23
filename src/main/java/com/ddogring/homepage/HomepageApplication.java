@@ -17,7 +17,7 @@ public class HomepageApplication {
         SpringApplication.run(HomepageApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     //配置http某个端口自动跳转https
     public TomcatServletWebServerFactory servletContainer() {
 
@@ -46,6 +46,6 @@ public class HomepageApplication {
         //跳转的https端口
         connector.setRedirectPort(443);
         return connector;
-    }
+    }*/
 
 }

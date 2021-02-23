@@ -22,5 +22,5 @@ public interface UserService {
     int modifyByPrimaryKey(User user);
 
     // 通过用户名获取用户信息
-    User getUser(String username);
+    User selectByUsername(String username);
 }
