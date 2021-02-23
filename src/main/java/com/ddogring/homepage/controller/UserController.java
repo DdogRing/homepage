@@ -41,7 +41,7 @@ public class UserController {
      */
     @RequestMapping("/register")
     @ResponseBody
-    public String register(){
+    public String register(User user){
         // userService.addUser(user);
         return SaltUtil.generateSalt(10);
     }
