@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-Hans-CN" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-Hans-CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -31,7 +32,7 @@
         <div class="fp-tablecell">
             <div class="page1">
                 <div class="nav wow zoomIn" data-wow-duration="2s">
-                    <h1 th:text="|${user.username}-Blog|">ZQ-Blog</h1>
+                    <h1 th:text="|${user.username}-Blog|"><span shiro:principal property="loginName"/>-Blog</h1>
                     <p>只要朝着一个方向努力，一切都会变得得心应手</p>
                     <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="article.html">Enter Blog</a>
                 </div>

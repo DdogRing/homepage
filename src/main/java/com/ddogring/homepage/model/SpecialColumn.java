@@ -5,37 +5,37 @@ import java.util.Date;
 
 public class SpecialColumn implements Serializable {
     /**
-     * 专栏id
+     * 涓撴爮id
 	 * 2021-02-28T22:07:20.650
      */
     private Integer id;
 
     /**
-     * 用户id
+     * 鐢ㄦ埛id
 	 * 2021-02-28T22:07:20.650
      */
     private Integer userId;
 
     /**
-     * 专栏名称
+     * 涓撴爮鍚嶇О
 	 * 2021-02-28T22:07:20.650
      */
     private String specialColumnName;
 
     /**
-     * 专栏图片地址
+     * 涓撴爮鍥剧墖鍦板潃
 	 * 2021-02-28T22:07:20.650
      */
     private String image;
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
 	 * 2021-02-28T22:07:20.650
      */
     private Date createTime;
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
 	 * 2021-02-28T22:07:20.650
      */
     private Date updTime;
@@ -47,84 +47,84 @@ public class SpecialColumn implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 专栏id
+     * 涓撴爮id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * 专栏id
+     * 涓撴爮id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * 用户id
+     * 鐢ㄦ埛id
      */
     public Integer getUserId() {
         return userId;
     }
 
     /**
-     * 用户id
+     * 鐢ㄦ埛id
      */
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
     /**
-     * 专栏名称
+     * 涓撴爮鍚嶇О
      */
     public String getSpecialColumnName() {
         return specialColumnName;
     }
 
     /**
-     * 专栏名称
+     * 涓撴爮鍚嶇О
      */
     public void setSpecialColumnName(String specialColumnName) {
         this.specialColumnName = specialColumnName == null ? null : specialColumnName.trim();
     }
 
     /**
-     * 专栏图片地址
+     * 涓撴爮鍥剧墖鍦板潃
      */
     public String getImage() {
         return image;
     }
 
     /**
-     * 专栏图片地址
+     * 涓撴爮鍥剧墖鍦板潃
      */
     public void setImage(String image) {
         this.image = image == null ? null : image.trim();
     }
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
      */
     public Date getUpdTime() {
         return updTime;
     }
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
      */
     public void setUpdTime(Date updTime) {
         this.updTime = updTime;

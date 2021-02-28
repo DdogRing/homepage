@@ -5,55 +5,55 @@ import java.util.Date;
 
 public class Article implements Serializable {
     /**
-     * ÎÄÕÂid
+     * æ–‡ç« id
 	 * 2021-02-28T22:07:20.641
      */
     private Integer id;
 
     /**
-     * ×¨À¸id
+     * ä¸“æ id
 	 * 2021-02-28T22:07:20.642
      */
     private Integer specialColumnId;
 
     /**
-     * ÎÄÕÂ±êÌâ
+     * æ–‡ç« æ ‡é¢˜
 	 * 2021-02-28T22:07:20.642
      */
     private String articleTitle;
 
     /**
-     * ×÷Õß
+     * ä½œè€…
 	 * 2021-02-28T22:07:20.642
      */
     private String author;
 
     /**
-     * ÎÄÕÂĞÎÊ½(0Ô­´´ 1ÕªÂ¼)
+     * æ–‡ç« å½¢å¼(0åŸåˆ› 1æ‘˜å½•)
 	 * 2021-02-28T22:07:20.642
      */
     private Boolean articleForm;
 
     /**
-     * ·ÃÎÊÊıÁ¿
+     * è®¿é—®æ•°é‡
 	 * 2021-02-28T22:07:20.642
      */
     private Integer checkNumber;
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
 	 * 2021-02-28T22:07:20.642
      */
     private Date createTime;
 
     /**
-     * ¸üĞÂÊ±¼ä
+     * æ›´æ–°æ—¶é—´
 	 * 2021-02-28T22:07:20.643
      */
     private Date updTime;
 
     /**
-     * ÎÄÕÂÄÚÈİ
+     * æ–‡ç« å†…å®¹
 	 * 2021-02-28T22:07:20.643
      */
     private String articleContent;
@@ -65,126 +65,126 @@ public class Article implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * ÎÄÕÂid
+     * æ–‡ç« id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * ÎÄÕÂid
+     * æ–‡ç« id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * ×¨À¸id
+     * ä¸“æ id
      */
     public Integer getSpecialColumnId() {
         return specialColumnId;
     }
 
     /**
-     * ×¨À¸id
+     * ä¸“æ id
      */
     public void setSpecialColumnId(Integer specialColumnId) {
         this.specialColumnId = specialColumnId;
     }
 
     /**
-     * ÎÄÕÂ±êÌâ
+     * æ–‡ç« æ ‡é¢˜
      */
     public String getArticleTitle() {
         return articleTitle;
     }
 
     /**
-     * ÎÄÕÂ±êÌâ
+     * æ–‡ç« æ ‡é¢˜
      */
     public void setArticleTitle(String articleTitle) {
         this.articleTitle = articleTitle == null ? null : articleTitle.trim();
     }
 
     /**
-     * ×÷Õß
+     * ä½œè€…
      */
     public String getAuthor() {
         return author;
     }
 
     /**
-     * ×÷Õß
+     * ä½œè€…
      */
     public void setAuthor(String author) {
         this.author = author == null ? null : author.trim();
     }
 
     /**
-     * ÎÄÕÂĞÎÊ½(0Ô­´´ 1ÕªÂ¼)
+     * æ–‡ç« å½¢å¼(0åŸåˆ› 1æ‘˜å½•)
      */
     public Boolean getArticleForm() {
         return articleForm;
     }
 
     /**
-     * ÎÄÕÂĞÎÊ½(0Ô­´´ 1ÕªÂ¼)
+     * æ–‡ç« å½¢å¼(0åŸåˆ› 1æ‘˜å½•)
      */
     public void setArticleForm(Boolean articleForm) {
         this.articleForm = articleForm;
     }
 
     /**
-     * ·ÃÎÊÊıÁ¿
+     * è®¿é—®æ•°é‡
      */
     public Integer getCheckNumber() {
         return checkNumber;
     }
 
     /**
-     * ·ÃÎÊÊıÁ¿
+     * è®¿é—®æ•°é‡
      */
     public void setCheckNumber(Integer checkNumber) {
         this.checkNumber = checkNumber;
     }
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * ¸üĞÂÊ±¼ä
+     * æ›´æ–°æ—¶é—´
      */
     public Date getUpdTime() {
         return updTime;
     }
 
     /**
-     * ¸üĞÂÊ±¼ä
+     * æ›´æ–°æ—¶é—´
      */
     public void setUpdTime(Date updTime) {
         this.updTime = updTime;
     }
 
     /**
-     * ÎÄÕÂÄÚÈİ
+     * æ–‡ç« å†…å®¹
      */
     public String getArticleContent() {
         return articleContent;
     }
 
     /**
-     * ÎÄÕÂÄÚÈİ
+     * æ–‡ç« å†…å®¹
      */
     public void setArticleContent(String articleContent) {
         this.articleContent = articleContent == null ? null : articleContent.trim();

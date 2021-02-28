@@ -44,7 +44,6 @@ public class LoginServiceImpl implements LoginService {
                 // 设置记住我
                 token.setRememberMe(user.getRememberMe());
             }*/
-            map.put("msg", 1);
         } catch (IncorrectCredentialsException e){
             map.put("msg", "密码错误");
             return map;

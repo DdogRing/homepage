@@ -36,15 +36,15 @@ public class ShiroConfig {
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
 
         // 配置不会拦截的链接 顺序判断
-        filterChainDefinitionMap.put("/**", "anon");
-        /*filterChainDefinitionMap.put("classpath:/static/**", "anon");
+
+        filterChainDefinitionMap.put("classpath:/static/**", "anon");
         filterChainDefinitionMap.put("classpath:/lib/**", "anon");
         filterChainDefinitionMap.put("classpath:/mapper/**", "anon");
         filterChainDefinitionMap.put("classpath:/templates/**", "anon");
         filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/toLogin", "anon");
         filterChainDefinitionMap.put("/index", "anon");
-        filterChainDefinitionMap.put("/", "anon");*/
+        filterChainDefinitionMap.put("/", "anon");
 
         // 配置退出 过滤器
         filterChainDefinitionMap.put("logout", "logout");
@@ -97,7 +97,7 @@ public class ShiroConfig {
         // 采用MD5方式加密
         hashedCredentialsMatcher.setHashAlgorithmName("MD5");
         // 设置加密次数 比如散列的次数为2 相当于 md5(md5("password"));
-        hashedCredentialsMatcher.setHashIterations(1);
+        hashedCredentialsMatcher.setHashIterations(1024);
         // 设置存储凭证十六进制编码
         hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);
         return hashedCredentialsMatcher;

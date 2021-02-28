@@ -20,10 +20,6 @@ public class Utils {
         return (int)(System.currentTimeMillis() / 1000);
     }
 
-    public static Date generateCurrentTime() {
-        return new Date();
-    }
-
     /**
      * 时间转换 毫秒转换秒
      * @author DdogRing

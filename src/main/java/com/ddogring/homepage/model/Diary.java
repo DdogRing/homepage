@@ -5,31 +5,31 @@ import java.util.Date;
 
 public class Diary implements Serializable {
     /**
-     * 日记id
+     * 鏃ヨid
 	 * 2021-02-28T22:07:20.649
      */
     private Integer id;
 
     /**
-     * 记录时间
+     * 璁板綍鏃堕棿
 	 * 2021-02-28T22:07:20.649
      */
     private Date recordTime;
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
 	 * 2021-02-28T22:07:20.649
      */
     private Date createTime;
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
 	 * 2021-02-28T22:07:20.649
      */
     private Date updTime;
 
     /**
-     * 日记内容
+     * 鏃ヨ鍐呭
 	 * 2021-02-28T22:07:20.649
      */
     private String content;
@@ -41,70 +41,70 @@ public class Diary implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 日记id
+     * 鏃ヨid
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * 日记id
+     * 鏃ヨid
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * 记录时间
+     * 璁板綍鏃堕棿
      */
     public Date getRecordTime() {
         return recordTime;
     }
 
     /**
-     * 记录时间
+     * 璁板綍鏃堕棿
      */
     public void setRecordTime(Date recordTime) {
         this.recordTime = recordTime;
     }
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
      */
     public Date getUpdTime() {
         return updTime;
     }
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
      */
     public void setUpdTime(Date updTime) {
         this.updTime = updTime;
     }
 
     /**
-     * 日记内容
+     * 鏃ヨ鍐呭
      */
     public String getContent() {
         return content;
     }
 
     /**
-     * 日记内容
+     * 鏃ヨ鍐呭
      */
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();

@@ -52,6 +52,8 @@ public class UserRealm extends AuthorizingRealm {
             // 未找到指定用户 return null 抛出UnknownAccountException异常
             return null;
         }
+
+        System.out.println(ByteSource.Util.bytes(user.getSalt()));
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
                 user, // 用户
                 user.getPassword(), // 用户密码

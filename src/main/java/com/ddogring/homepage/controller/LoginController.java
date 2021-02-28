@@ -2,6 +2,7 @@ package com.ddogring.homepage.controller;
 
 import com.ddogring.homepage.model.User;
 import com.ddogring.homepage.service.LoginService;
+import com.ddogring.homepage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,9 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    @Autowired
+    private UserService userService;
+
     /**
      * 跳转登录页面
      * @author DdogRing
@@ -37,21 +41,6 @@ public class LoginController {
     @RequestMapping("/login")
     public String login(User user, Model model){
         Map<String, Object> loginMap = loginService.login(user);
-
-        Object object = loginMap.get("msg");
-        if (object instanceof Integer) {
-            Integer msgNum = (Integer) object;
-            if (1 == msgNum){
-                return "index";
-            } else {
-                model.addAttribute("msg", "登录失败");
-                return "login";
-            }
-        } else {
-            String msgStr = (String) object;
-            model.addAttribute("msg", msgStr);
-            return "login";
-        }
+        return "index";
     }
-
 }

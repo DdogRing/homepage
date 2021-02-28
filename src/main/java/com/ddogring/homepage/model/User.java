@@ -5,43 +5,43 @@ import java.util.Date;
 
 public class User implements Serializable {
     /**
-     * ÓÃ»§id
+     * ç”¨æˆ·id
 	 * 2021-02-23T22:32:47.458
      */
     private Integer id;
 
     /**
-     * ÓÃ»§Ãû
+     * ç”¨æˆ·å
 	 * 2021-02-23T22:32:47.460
      */
     private String username;
 
     /**
-     * ÃÜÂë
+     * å¯†ç 
 	 * 2021-02-23T22:32:47.460
      */
     private String password;
 
     /**
-     * ÅäºÏÃÜÂëÑÎÖµ
+     * é…åˆå¯†ç ç›å€¼
 	 * 2021-02-23T22:32:47.460
      */
     private String salt;
 
     /**
-     * ÓÊÏä
+     * é‚®ç®±
 	 * 2021-02-23T22:32:47.460
      */
     private String mail;
 
     /**
-     * ÊÖ»úºÅ
+     * æ‰‹æœºå·
 	 * 2021-02-23T22:32:47.460
      */
     private String mobile;
 
     /**
-     * ÓÃ»§µØÖ·
+     * ç”¨æˆ·åœ°å€
 	 * 2021-02-23T22:32:47.460
      */
     private String address;
@@ -53,25 +53,25 @@ public class User implements Serializable {
     private Integer qqNumber;
 
     /**
-     * ÓÃ»§¼ÓÃÜ´®
+     * ç”¨æˆ·åŠ å¯†ä¸²
 	 * 2021-02-23T22:32:47.460
      */
     private String token;
 
     /**
-     * ÉèÖÃ¼Ç×¡ÎÒ
+     * è®¾ç½®è®°ä½æˆ‘
      * 2021-02-23T22:32:47.460
      */
     private boolean RememberMe;
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
 	 * 2021-02-23T22:32:47.460
      */
     private Date createTime;
 
     /**
-     * ¸üĞÂÊ±¼ä
+     * æ›´æ–°æ—¶é—´
 	 * 2021-02-23T22:32:47.460
      */
     private Date updTime;
@@ -83,98 +83,98 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * ÓÃ»§id
+     * ç”¨æˆ·id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * ÓÃ»§id
+     * ç”¨æˆ·id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * ÓÃ»§Ãû
+     * ç”¨æˆ·å
      */
     public String getUsername() {
         return username;
     }
 
     /**
-     * ÓÃ»§Ãû
+     * ç”¨æˆ·å
      */
     public void setUsername(String username) {
         this.username = username == null ? null : username.trim();
     }
 
     /**
-     * ÃÜÂë
+     * å¯†ç 
      */
     public String getPassword() {
         return password;
     }
 
     /**
-     * ÃÜÂë
+     * å¯†ç 
      */
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
     }
 
     /**
-     * ÅäºÏÃÜÂëÑÎÖµ
+     * é…åˆå¯†ç ç›å€¼
      */
     public String getSalt() {
         return salt;
     }
 
     /**
-     * ÅäºÏÃÜÂëÑÎÖµ
+     * é…åˆå¯†ç ç›å€¼
      */
     public void setSalt(String salt) {
         this.salt = salt == null ? null : salt.trim();
     }
 
     /**
-     * ÓÊÏä
+     * é‚®ç®±
      */
     public String getMail() {
         return mail;
     }
 
     /**
-     * ÓÊÏä
+     * é‚®ç®±
      */
     public void setMail(String mail) {
         this.mail = mail == null ? null : mail.trim();
     }
 
     /**
-     * ÊÖ»úºÅ
+     * æ‰‹æœºå·
      */
     public String getMobile() {
         return mobile;
     }
 
     /**
-     * ÊÖ»úºÅ
+     * æ‰‹æœºå·
      */
     public void setMobile(String mobile) {
         this.mobile = mobile == null ? null : mobile.trim();
     }
 
     /**
-     * ÓÃ»§µØÖ·
+     * ç”¨æˆ·åœ°å€
      */
     public String getAddress() {
         return address;
     }
 
     /**
-     * ÓÃ»§µØÖ·
+     * ç”¨æˆ·åœ°å€
      */
     public void setAddress(String address) {
         this.address = address == null ? null : address.trim();
@@ -195,14 +195,14 @@ public class User implements Serializable {
     }
 
     /**
-     * ÓÃ»§¼ÓÃÜ´®
+     * ç”¨æˆ·åŠ å¯†ä¸²
      */
     public String getToken() {
         return token;
     }
 
     /**
-     * ÓÃ»§¼ÓÃÜ´®
+     * ç”¨æˆ·åŠ å¯†ä¸²
      */
     public void setToken(String token) {
         this.token = token == null ? null : token.trim();
@@ -217,28 +217,28 @@ public class User implements Serializable {
     }
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * ´´½¨Ê±¼ä
+     * åˆ›å»ºæ—¶é—´
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * ¸üĞÂÊ±¼ä
+     * æ›´æ–°æ—¶é—´
      */
     public Date getUpdTime() {
         return updTime;
     }
 
     /**
-     * ¸üĞÂÊ±¼ä
+     * æ›´æ–°æ—¶é—´
      */
     public void setUpdTime(Date updTime) {
         this.updTime = updTime;

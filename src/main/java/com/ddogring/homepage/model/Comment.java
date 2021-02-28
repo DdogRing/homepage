@@ -5,37 +5,37 @@ import java.util.Date;
 
 public class Comment implements Serializable {
     /**
-     * 评论id
+     * 璇勮id
 	 * 2021-02-28T22:07:20.649
      */
     private Integer id;
 
     /**
-     * 用户id
+     * 鐢ㄦ埛id
 	 * 2021-02-28T22:07:20.649
      */
     private Integer userId;
 
     /**
-     * 文章id
+     * 鏂囩珷id
 	 * 2021-02-28T22:07:20.649
      */
     private Integer articleId;
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
 	 * 2021-02-28T22:07:20.649
      */
     private Date createTime;
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
 	 * 2021-02-28T22:07:20.649
      */
     private Date updTime;
 
     /**
-     * 评论内容
+     * 璇勮鍐呭
 	 * 2021-02-28T22:07:20.649
      */
     private String content;
@@ -47,84 +47,84 @@ public class Comment implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 评论id
+     * 璇勮id
      */
     public Integer getId() {
         return id;
     }
 
     /**
-     * 评论id
+     * 璇勮id
      */
     public void setId(Integer id) {
         this.id = id;
     }
 
     /**
-     * 用户id
+     * 鐢ㄦ埛id
      */
     public Integer getUserId() {
         return userId;
     }
 
     /**
-     * 用户id
+     * 鐢ㄦ埛id
      */
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
     /**
-     * 文章id
+     * 鏂囩珷id
      */
     public Integer getArticleId() {
         return articleId;
     }
 
     /**
-     * 文章id
+     * 鏂囩珷id
      */
     public void setArticleId(Integer articleId) {
         this.articleId = articleId;
     }
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
      */
     public Date getCreateTime() {
         return createTime;
     }
 
     /**
-     * 创建时间
+     * 鍒涘缓鏃堕棿
      */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
      */
     public Date getUpdTime() {
         return updTime;
     }
 
     /**
-     * 更新时间
+     * 鏇存柊鏃堕棿
      */
     public void setUpdTime(Date updTime) {
         this.updTime = updTime;
     }
 
     /**
-     * 评论内容
+     * 璇勮鍐呭
      */
     public String getContent() {
         return content;
     }
 
     /**
-     * 评论内容
+     * 璇勮鍐呭
      */
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();

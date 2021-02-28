@@ -32,10 +32,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public int addUser(User user) {
 
+        // 生成随机串
+        String generateSalt = SaltUtil.generateSalt(10);
         // 生成加密字符串
-        String salt = String.valueOf(ByteSource.Util.bytes(user.getUsername()));
-        user.setSalt(salt);
+        String salt = String.valueOf(ByteSource.Util.bytes(generateSalt));
+        user.setSalt(generateSalt);
 
+        System.out.println(salt);
         /*
          * new SimpleHash("加密方法", "明文密码", "盐值", "Hash次数")
          * 加密方法(md5, SHA-1, SHA-256, SHA-512)等
@@ -45,8 +48,7 @@ public class UserServiceImpl implements UserService {
         user.setPassword(passwordEncode);
 
         // 生成当前时间戳
-        int currentTimeStamp = Utils.generateCurrentTimeStamp();
-        Date date = Utils.generateCurrentTime();
+        Date date = new Date();
         user.setCreateTime(date);
         user.setUpdTime(date);
         return userMapper.insertSelective(user);
