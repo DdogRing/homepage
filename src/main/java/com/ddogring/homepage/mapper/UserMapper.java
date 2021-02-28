@@ -1,7 +1,9 @@
 package com.ddogring.homepage.mapper;
 
 import com.ddogring.homepage.model.User;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 

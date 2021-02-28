@@ -1,5 +1,7 @@
 package com.ddogring.homepage.config.shiro;
 
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -32,8 +34,7 @@ public class ShiroConfig {
             role: 拥有某个角色权限才能访问
          */
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
-        // 配置退出 过滤器
-        filterChainDefinitionMap.put("logout", "logout");
+
         // 配置不会拦截的链接 顺序判断
         filterChainDefinitionMap.put("/static/**", "anon");
         filterChainDefinitionMap.put("/lib/**", "anon");
@@ -42,6 +43,9 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/toLogin", "anon");
         filterChainDefinitionMap.put("/user/register", "anon");
+
+        // 配置退出 过滤器
+        filterChainDefinitionMap.put("logout", "logout");
         // filterChainDefinitionMap.put("/**", "authc");
         // 配置shiro默认登录界面地址，前后端分离中登录页面跳转应由前端控制，后端仅提供json
         // shiroFilterFactoryBean.setLoginUrl("unauth");
@@ -72,7 +76,41 @@ public class ShiroConfig {
      * @return com.qb.qbyg.config.shiro.UserRealm
      */
     @Bean(name = "userRealm")
-    public UserRealm userRealm(){
-        return new UserRealm();
+    public UserRealm userRealm(@Qualifier(value = "hashedCredentialsMatcher") HashedCredentialsMatcher hashedCredentialsMatcher){
+        UserRealm userRealm = new UserRealm();
+        userRealm.setCredentialsMatcher(hashedCredentialsMatcher);
+        return userRealm;
+    }
+
+    /**
+     * 密码匹配凭证管理器(由于我们的密码校验交给Shiro的SimpleAuthenticationInfo进行处理了)
+     * @author DdogRing
+     * @date 2021/2/22
+     * @param
+     * @return org.apache.shiro.authc.credential.HashedCredentialsMatcher
+     */
+    @Bean(name = "hashedCredentialsMatcher")
+    public HashedCredentialsMatcher hashedCredentialsMatcher(){
+        HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
+        // 采用MD5方式加密
+        hashedCredentialsMatcher.setHashAlgorithmName("MD5");
+        // 设置加密次数 比如散列的次数为2 相当于 md5(md5("password"));
+        hashedCredentialsMatcher.setHashIterations(1);
+        // 设置存储凭证十六进制编码
+        hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);
+        return hashedCredentialsMatcher;
+    }
+
+    /**
+     * Shiro生命周期处理器
+     * 此方法需要用static作为修饰符, 否则无法通过@Value()注解的方式获取配置文件的值
+     * @author DdogRing
+     * @date 2021/2/23
+     * @param
+     * @return org.apache.shiro.spring.LifecycleBeanPostProcessor
+     */
+    @Bean
+    public static LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
+        return new LifecycleBeanPostProcessor();
     }
 }

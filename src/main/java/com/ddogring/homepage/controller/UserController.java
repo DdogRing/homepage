@@ -40,9 +40,9 @@ public class UserController {
      * @return java.lang.String
      */
     @RequestMapping("/register")
-    @ResponseBody
     public String register(User user){
-        // userService.addUser(user);
-        return SaltUtil.generateSalt(10);
+        userService.addUser(user);
+
+        return null;
     }
 }

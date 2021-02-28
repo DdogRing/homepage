@@ -59,6 +59,12 @@ public class User implements Serializable {
     private String token;
 
     /**
+     * 设置记住我
+     * 2021-02-23T22:32:47.460
+     */
+    private boolean RememberMe;
+
+    /**
      * 创建时间
 	 * 2021-02-23T22:32:47.460
      */
@@ -200,6 +206,14 @@ public class User implements Serializable {
      */
     public void setToken(String token) {
         this.token = token == null ? null : token.trim();
+    }
+
+    public boolean getRememberMe() {
+        return RememberMe;
+    }
+
+    public void setRememberMe(boolean rememberMe) {
+        RememberMe = rememberMe;
     }
 
     /**

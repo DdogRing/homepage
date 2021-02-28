@@ -3,10 +3,15 @@ package com.ddogring.homepage.service.serviceImpl;
 import com.ddogring.homepage.mapper.UserMapper;
 import com.ddogring.homepage.model.User;
 import com.ddogring.homepage.service.UserService;
+import com.ddogring.homepage.util.SaltUtil;
+import com.ddogring.homepage.util.Utils;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.crypto.hash.SimpleHash;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * @author DdogRing
@@ -26,12 +31,25 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int addUser(User user) {
-        String username = user.getUsername();
-        String password = user.getPassword();
 
-        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
-        // userMapper.insertSelective(user)
-        return 1;
+        // 生成加密字符串
+        String salt = String.valueOf(ByteSource.Util.bytes(user.getUsername()));
+        user.setSalt(salt);
+
+        /*
+         * new SimpleHash("加密方法", "明文密码", "盐值", "Hash次数")
+         * 加密方法(md5, SHA-1, SHA-256, SHA-512)等
+         */
+        // 加密后的密码
+        String passwordEncode = new SimpleHash("MD5", user.getPassword(), salt, 1024).toString();
+        user.setPassword(passwordEncode);
+
+        // 生成当前时间戳
+        int currentTimeStamp = Utils.generateCurrentTimeStamp();
+        Date date = Utils.generateCurrentTime();
+        user.setCreateTime(date);
+        user.setUpdTime(date);
+        return userMapper.insertSelective(user);
     }
 
     @Override
