@@ -36,13 +36,15 @@ public class ShiroConfig {
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
 
         // 配置不会拦截的链接 顺序判断
-        filterChainDefinitionMap.put("/static/**", "anon");
-        filterChainDefinitionMap.put("/lib/**", "anon");
-        filterChainDefinitionMap.put("/mapper/**", "anon");
-        filterChainDefinitionMap.put("/templates/**", "anon");
+        filterChainDefinitionMap.put("/**", "anon");
+        /*filterChainDefinitionMap.put("classpath:/static/**", "anon");
+        filterChainDefinitionMap.put("classpath:/lib/**", "anon");
+        filterChainDefinitionMap.put("classpath:/mapper/**", "anon");
+        filterChainDefinitionMap.put("classpath:/templates/**", "anon");
         filterChainDefinitionMap.put("/login", "anon");
         filterChainDefinitionMap.put("/toLogin", "anon");
-        filterChainDefinitionMap.put("/user/register", "anon");
+        filterChainDefinitionMap.put("/index", "anon");
+        filterChainDefinitionMap.put("/", "anon");*/
 
         // 配置退出 过滤器
         filterChainDefinitionMap.put("logout", "logout");
