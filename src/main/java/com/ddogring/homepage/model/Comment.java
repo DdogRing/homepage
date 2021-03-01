@@ -6,43 +6,43 @@ import java.util.Date;
 public class Comment implements Serializable {
     /**
      * 评论id
-	 * 2021-02-28T22:07:20.649
+	 * 2021-03-01T14:40:16.854
      */
     private Integer id;
 
     /**
      * 用户id
-	 * 2021-02-28T22:07:20.649
+	 * 2021-03-01T14:40:16.854
      */
     private Integer userId;
 
     /**
      * 文章id
-	 * 2021-02-28T22:07:20.649
+	 * 2021-03-01T14:40:16.854
      */
     private Integer articleId;
 
     /**
+     * 评论内容
+	 * 2021-03-01T14:40:16.854
+     */
+    private String content;
+
+    /**
      * 创建时间
-	 * 2021-02-28T22:07:20.649
+	 * 2021-03-01T14:40:16.854
      */
     private Date createTime;
 
     /**
      * 更新时间
-	 * 2021-02-28T22:07:20.649
+	 * 2021-03-01T14:40:16.854
      */
     private Date updTime;
 
     /**
-     * 评论内容
-	 * 2021-02-28T22:07:20.649
-     */
-    private String content;
-
-    /**
     
-	 * 2021-02-28T22:07:20.649
+	 * 2021-03-01T14:40:16.854
      */
     private static final long serialVersionUID = 1L;
 
@@ -89,6 +89,20 @@ public class Comment implements Serializable {
     }
 
     /**
+     * 评论内容
+     */
+    public String getContent() {
+        return content;
+    }
+
+    /**
+     * 评论内容
+     */
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
+
+    /**
      * 创建时间
      */
     public Date getCreateTime() {
@@ -116,20 +130,6 @@ public class Comment implements Serializable {
         this.updTime = updTime;
     }
 
-    /**
-     * 评论内容
-     */
-    public String getContent() {
-        return content;
-    }
-
-    /**
-     * 评论内容
-     */
-    public void setContent(String content) {
-        this.content = content == null ? null : content.trim();
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -139,9 +139,9 @@ public class Comment implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", userId=").append(userId);
         sb.append(", articleId=").append(articleId);
+        sb.append(", content=").append(content);
         sb.append(", createTime=").append(createTime);
         sb.append(", updTime=").append(updTime);
-        sb.append(", content=").append(content);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

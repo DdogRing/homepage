@@ -1,7 +1,9 @@
 package com.ddogring.homepage.config.shiro;
 
+import com.ddogring.homepage.constant.Constant;
 import com.ddogring.homepage.model.User;
 import com.ddogring.homepage.service.UserService;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -53,12 +55,19 @@ public class UserRealm extends AuthorizingRealm {
             return null;
         }
 
-        System.out.println(ByteSource.Util.bytes(user.getSalt()));
+        // 生成salt
+        String salt = ByteSource.Util.bytes(username + user.getSalt()).toString();
+
         SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
                 user, // 用户
                 user.getPassword(), // 用户密码
-                ByteSource.Util.bytes(user.getSalt()), // salt
+                ByteSource.Util.bytes(salt), // salt
                 getName()); // Realm name
+
+        // 写入session 移除密码相关信息
+        user.setPassword("");
+        user.setSalt("");
+        SecurityUtils.getSubject().getSession().setAttribute(Constant.USER, user);
         return simpleAuthenticationInfo;
     }
 }

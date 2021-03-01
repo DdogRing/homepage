@@ -6,61 +6,61 @@ import java.util.Date;
 public class Article implements Serializable {
     /**
      * 文章id
-	 * 2021-02-28T22:07:20.641
+	 * 2021-03-01T14:40:16.843
      */
     private Integer id;
 
     /**
      * 专栏id
-	 * 2021-02-28T22:07:20.642
+	 * 2021-03-01T14:40:16.845
      */
     private Integer specialColumnId;
 
     /**
      * 文章标题
-	 * 2021-02-28T22:07:20.642
+	 * 2021-03-01T14:40:16.845
      */
     private String articleTitle;
 
     /**
      * 作者
-	 * 2021-02-28T22:07:20.642
+	 * 2021-03-01T14:40:16.845
      */
     private String author;
 
     /**
+     * 文章内容
+	 * 2021-03-01T14:40:16.845
+     */
+    private String articleContent;
+
+    /**
      * 文章形式(0原创 1摘录)
-	 * 2021-02-28T22:07:20.642
+	 * 2021-03-01T14:40:16.845
      */
     private Boolean articleForm;
 
     /**
      * 访问数量
-	 * 2021-02-28T22:07:20.642
+	 * 2021-03-01T14:40:16.845
      */
     private Integer checkNumber;
 
     /**
      * 创建时间
-	 * 2021-02-28T22:07:20.642
+	 * 2021-03-01T14:40:16.845
      */
     private Date createTime;
 
     /**
      * 更新时间
-	 * 2021-02-28T22:07:20.643
+	 * 2021-03-01T14:40:16.846
      */
     private Date updTime;
 
     /**
-     * 文章内容
-	 * 2021-02-28T22:07:20.643
-     */
-    private String articleContent;
-
-    /**
     
-	 * 2021-02-28T22:07:20.643
+	 * 2021-03-01T14:40:16.846
      */
     private static final long serialVersionUID = 1L;
 
@@ -121,6 +121,20 @@ public class Article implements Serializable {
     }
 
     /**
+     * 文章内容
+     */
+    public String getArticleContent() {
+        return articleContent;
+    }
+
+    /**
+     * 文章内容
+     */
+    public void setArticleContent(String articleContent) {
+        this.articleContent = articleContent == null ? null : articleContent.trim();
+    }
+
+    /**
      * 文章形式(0原创 1摘录)
      */
     public Boolean getArticleForm() {
@@ -176,20 +190,6 @@ public class Article implements Serializable {
         this.updTime = updTime;
     }
 
-    /**
-     * 文章内容
-     */
-    public String getArticleContent() {
-        return articleContent;
-    }
-
-    /**
-     * 文章内容
-     */
-    public void setArticleContent(String articleContent) {
-        this.articleContent = articleContent == null ? null : articleContent.trim();
-    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -200,11 +200,11 @@ public class Article implements Serializable {
         sb.append(", specialColumnId=").append(specialColumnId);
         sb.append(", articleTitle=").append(articleTitle);
         sb.append(", author=").append(author);
+        sb.append(", articleContent=").append(articleContent);
         sb.append(", articleForm=").append(articleForm);
         sb.append(", checkNumber=").append(checkNumber);
         sb.append(", createTime=").append(createTime);
         sb.append(", updTime=").append(updTime);
-        sb.append(", articleContent=").append(articleContent);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

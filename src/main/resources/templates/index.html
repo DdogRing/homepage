@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans-CN" xmlns:th="http://www.thymeleaf.org"
-      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<html lang="zh-Hans-CN" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -32,9 +31,9 @@
         <div class="fp-tablecell">
             <div class="page1">
                 <div class="nav wow zoomIn" data-wow-duration="2s">
-                    <h1 th:text="|${user.username}-Blog|"><span shiro:principal property="loginName"/>-Blog</h1>
+                    <h1 th:text="|${user.username}-Blog|">zs-Blog</h1>
                     <p>只要朝着一个方向努力，一切都会变得得心应手</p>
-                    <a class="layui-btn layui-btn-normal" style="margin-top: 20px" href="article.html">Enter Blog</a>
+                    <a class="layui-btn layui-btn-normal" style="margin-top: 20px" th:href="@{/article(userId = ${user.id})}">Enter Blog</a>
                 </div>
                 <a class="next wow fadeInUp" data-wow-duration="2s" id="next"></a>
             </div>
@@ -155,7 +154,7 @@
                 <div class="warp-box">
                     <div class="about">
                         <div class="inner">
-                            <h1 class="wow fadeInLeft" th:text="|${user.username}个人博客|">ZQ个人博客</h1>
+                            <h1 class="wow fadeInLeft" th:text="|${user.username}的个人博客|">ZQ的个人博客</h1>
                             <p class="wow fadeInRight">                         
                                    一天很短，开心了就笑，不开心了就过会儿再笑。
                             </p>

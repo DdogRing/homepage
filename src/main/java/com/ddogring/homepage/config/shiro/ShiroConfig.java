@@ -46,6 +46,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/index", "anon");
         filterChainDefinitionMap.put("/", "anon");
 
+        filterChainDefinitionMap.put("/**", "anon");
         // 配置退出 过滤器
         filterChainDefinitionMap.put("logout", "logout");
         // filterChainDefinitionMap.put("/**", "authc");

@@ -5,10 +5,7 @@ import com.ddogring.homepage.service.LoginService;
 import com.ddogring.homepage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.Map;
 
 /**
  * @ClassName LoginController
@@ -33,14 +30,24 @@ public class LoginController {
      * @param
      * @return java.lang.String
      */
-    @RequestMapping(value = {"/toLogin", "index", "/"})
+    @RequestMapping(value = {"/toLogin", "/"})
     public String toLogin(){
         return "login";
     }
 
+    /**
+     * 用户登录
+     * @author DdogRing
+     * @date 2021/3/1
+     * @param user
+     * @return java.lang.String
+     */
     @RequestMapping("/login")
-    public String login(User user, Model model){
-        Map<String, Object> loginMap = loginService.login(user);
-        return "index";
+    public String login(User user){
+        boolean loginSuccess = loginService.login(user);
+        if (loginSuccess) {
+            return "index";
+        }
+        return "login";
     }
 }

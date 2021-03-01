@@ -12,8 +12,6 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author DdogRing
@@ -27,8 +25,7 @@ public class LoginServiceImpl implements LoginService {
     private UserMapper userMapper;
 
     @Override
-    public Map<String, Object> login(User user) {
-        Map<String, Object> map = new HashMap<>();
+    public boolean login(User user) {
         String username = user.getUsername();
         String password = user.getPassword();
 
@@ -40,21 +37,16 @@ public class LoginServiceImpl implements LoginService {
         try {
             // 利用token登录
             subject.login(token);
-            /*if (subject.isAuthenticated() || subject.isRemembered()){
-                // 设置记住我
-                token.setRememberMe(user.getRememberMe());
-            }*/
+            return true;
         } catch (IncorrectCredentialsException e){
-            map.put("msg", "密码错误");
-            return map;
+            new RuntimeException("密码错误");
+            return false;
         } catch (UnknownAccountException e) {
-            map.put("msg", "用户名不存在");
-            return map;
+            new RuntimeException("用户名不存在");
+            return false;
         } catch (AuthenticationException e) {
-            map.put("msg", "该用户不存在");
-            return map;
+            new RuntimeException("该用户不存在");
+            return false;
         }
-        map.put("msg", 0);
-        return map;
     }
 }

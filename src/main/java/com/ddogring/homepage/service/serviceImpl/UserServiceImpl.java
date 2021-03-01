@@ -4,8 +4,6 @@ import com.ddogring.homepage.mapper.UserMapper;
 import com.ddogring.homepage.model.User;
 import com.ddogring.homepage.service.UserService;
 import com.ddogring.homepage.util.SaltUtil;
-import com.ddogring.homepage.util.Utils;
-import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.crypto.hash.SimpleHash;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.stereotype.Service;
@@ -35,14 +33,14 @@ public class UserServiceImpl implements UserService {
         // 生成随机串
         String generateSalt = SaltUtil.generateSalt(10);
         // 生成加密字符串
-        String salt = String.valueOf(ByteSource.Util.bytes(generateSalt));
+        String salt = ByteSource.Util.bytes(user.getUsername() + generateSalt).toString();
         user.setSalt(generateSalt);
 
-        System.out.println(salt);
         /*
          * new SimpleHash("加密方法", "明文密码", "盐值", "Hash次数")
          * 加密方法(md5, SHA-1, SHA-256, SHA-512)等
          */
+
         // 加密后的密码
         String passwordEncode = new SimpleHash("MD5", user.getPassword(), salt, 1024).toString();
         user.setPassword(passwordEncode);
