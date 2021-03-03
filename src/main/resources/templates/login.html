@@ -137,7 +137,7 @@
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
     $(function () {
         // 点击注册提交注册表单
        $('#subRe').click(function () {
@@ -148,11 +148,25 @@
        $('#subLo').click(function () {
             $('#formLo').submit();
        })
-    });
+    })
+
+    $(document).keydown(function (e) {
+        // 键盘enter登录
+        if (e.keyCode == 13) {
+            $('#formLo').submit();
+        // 键盘ESC清空表单
+        } else if(e.keyCode == 27) {
+            /*
+             *  此处使用$('#formLo')[0] 这样获取的是jQuery对象
+             *  $('#formLo').get(0)是DOM对象
+             *  $('#formLo')是数组
+             */
+            $('#formLo')[0].reset();
+        }
+    })
 </script>
 
 <script>
-
 //宇宙特效
 "use strict";
 var canvas = document.getElementById('canvas'),
